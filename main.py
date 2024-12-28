@@ -91,25 +91,7 @@ class Game:
         self.surface.fill((50, 0, 0))
         gameover_texts = [f'Your score is {self.score}', 'Game Over! Press R to Restart or Esc to Quit']
         for text in range(len(gameover_texts)):
-            gameover_text = self.font.render(gameover_texts[text], True, "White")
-            if text == 0:
-                if self.score < self.highscore:
-                 self.surface.blit(gameover_text, (380, 300))
-                else:
-                 self.surface.blit(self.font.render(f'High Score : {self.score}', True, "White"), (380, 300))
-                 with open("resources/highscore.txt", 'w') as file:
-                  file.write(f"High Score : {self.score}")
-            elif text == 1:
-                self.surface.blit(gameover_text, (200, 340))
-        pg.display.flip()
-        while True:
-            for event in pg.event.get():
-                if event.type == pg.QUIT or (event.type == pg.KEYDOWN and event.key == pg.K_ESCAPE):
-                    self.running = False
-                    return
-                if event.type == pg.KEYDOWN and event.key == pg.K_r:
-                    self.reset()#reset function added instead of creating new instance every time
-                    return
+            pass
 
     @staticmethod
     def play_sound(param):
