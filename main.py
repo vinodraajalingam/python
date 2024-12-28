@@ -108,9 +108,8 @@ class Game:
                     self.running = False
                     return
                 if event.type == pg.KEYDOWN and event.key == pg.K_r:
-                    # newgame = Game()
-                    # newgame.run()
-                    self.reset()
+                    newgame = Game()
+                    newgame.run()
                     return
 
     @staticmethod
@@ -136,13 +135,6 @@ class Game:
         if (self.score > self.highscore) and not self.sound_played:
             self.play_sound("highscore.mp3")
             self.sound_played = True
-
-    def reset(self):
-        self.score = 0
-        self.snake = Snake(self.surface, 3)
-        self.apple = Apple(self.surface)
-        self.isPaused = True
-        self.sound_played = False
 
 class Apple:
     def __init__(self, surface):
