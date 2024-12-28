@@ -108,9 +108,7 @@ class Game:
                     self.running = False
                     return
                 if event.type == pg.KEYDOWN and event.key == pg.K_r:
-                    # newgame = Game()
-                    # newgame.run()
-                    self.reset()
+                    self.reset()#reset function added instead of creating new instance every time
                     return
 
     @staticmethod
